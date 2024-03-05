@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  app:
+    container_name: testlitethinking
+    build: .
+    volumes:
+      - .:/app
+      - app-log:/var/log/application/
+    ports:
+      - "8015:8000"
+    command: /start
+
+volumes:
+  app-log: {}
